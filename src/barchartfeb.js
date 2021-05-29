@@ -3,17 +3,15 @@ import React, { useState, useEffect } from 'react'
 import {Bar} from 'react-chartjs-2';
 import { Line } from 'react-chartjs-2'
 
-const DynamicChart = () => {
+const DynamicChartFeb = () => {
     const [chartData, setChartData]  = useState({});
     // const []
 
     // const []
 
  const Chart = () => {
-        let AprilTotalllins = [];
-        let Aprilquantity = [];
-        let lists = [];
-        let months = [];
+        let FebTotalllins = [];
+        let Febquantity = [];
 
         axios.get("https://json.link/S6LGvKZQLt.json")
         .then(result => {
@@ -48,36 +46,23 @@ const DynamicChart = () => {
             const MOH711AF = result.data.rows[5].map((llinclientsF)=> llinclientsF);
             // console.log(MOH711AF[2]);
             const totalllinsF = parseFloat(MOH711CF[2]) + parseFloat(MOH711AF[2]);
-            const threemonthtotalllins = parseFloat(totalllins) + parseFloat(totalllinsM) + parseFloat(totalllinsF);
-            console.log(threemonthtotalllins)
             // console.log(totalllinsF);
-            lists.push(parseInt(totalllinsF));
-            lists.push(parseInt(totalllinsM));
-            lists.push(parseInt(totalllins));
-            console.log(lists)
-            
-            // lists.push(parseInt(totalllinsF));
-            // lists.push(parseInt(totalllinsM));
-            Aprilquantity.push(parseInt(0));
-            Aprilquantity.push(parseInt(dispensedMarch[2]));
-            Aprilquantity.push(parseInt(dipensedApril[2]));
-            console.log(Aprilquantity);
-            months.push('February 2021');
-            months.push('March 2021');
-            months.push('April 2021');
-            // for(const dataObj of result.data.metaData.items){
-            //     months.push(parseInt(dataObj.name));
+            const dispensedFeb = 0;
+            FebTotalllins.push(parseInt(totalllinsF));
+            Febquantity.push(parseInt(dispensedFeb));
+            // for(const dataObj of dipensedApril){
+            //     Aprilquantity.push(parseInt(dataObj[2]));
 
             // }
             setChartData({
-                labels: months,
+                labels: ['February'],
                 datasets: [{
                     // barPercentage: 2.0,
                     // barThickness: 200,
                     // // maxBarThickness: 100,
                     // minBarLength: 2,
                                              label: 'Total LLINS',
-                                             data: lists,
+                                             data: FebTotalllins,
                                              backgroundColor: [
                                                  'rgba(255, 99, 132, 0.2)',
                                                  'rgba(54, 162, 235, 0.2)',
@@ -105,11 +90,11 @@ const DynamicChart = () => {
                                                  'rgba(255, 159, 64, 0.2)',
                                              ],
                             
-                                             borderWidth: 1
+                                             borderWidth: 1.5
                                          },
                                          {
                                             label: 'total quantity dispensed',
-                                            data: Aprilquantity,
+                                            data: Febquantity,
                                              borderColor: [
                                                  'rgba(255, 99, 132, 1)',
                                                  'rgba(54, 162, 235, 1)',
@@ -150,7 +135,7 @@ const DynamicChart = () => {
       }, []);
       return(
           <div className="App">
-              <h1>April Bar Chart Representation</h1>
+              <h1>March Bar Chart Representation</h1>
               <div>
                   <Bar
                     data={chartData}
@@ -171,4 +156,4 @@ const DynamicChart = () => {
       )
 }
 
-export default DynamicChart;
+export default DynamicChartFeb;

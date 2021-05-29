@@ -1,6 +1,9 @@
 import './App.css';
 import DynamicChart from './barchartwithhooks';
 import BarChart from './bar_chart';
+import DynamicChartMarch from './barchartMarch'
+import DynamicChartFeb from './barchartfeb';
+import LineGraph from './linegraph';
 
 
 function App() {
@@ -8,10 +11,10 @@ function App() {
 
   return (
     <div>
-      <header className="App-header">
-        <h1>DHIS VISUALIZATIONS</h1>
-      </header>
-      <BarChart/>
+      <h1>Kisumu county </h1>
+      <DynamicChart/>, 
+      <LineGraph/>
+
     </div>
   );
 }

@@ -89,7 +89,7 @@ export default function NavBar() {
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,
-                input: classes.inputInput,
+                ilabel: 'Total LLINS',nput: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
             />

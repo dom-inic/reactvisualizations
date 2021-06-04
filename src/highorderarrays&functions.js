@@ -63,8 +63,16 @@ export default class ArraysManipulation extends Component {
         console.log(allCompanies);
         const companyName = companies.map(function(company){
             return company.name;
+
         }); 
         console.log(companyName);
+
+        //sort companies by start year
+        const sortdates = companies.sort((a, b)=> (a.start > b.start ? 1 : -1));
+        console.log(sortdates);
+        // sort ages
+        const sortages = ages.sort((a, b)=> b-a);
+        console.log(sortages);
 
     }
     render() {

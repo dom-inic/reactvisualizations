@@ -55,6 +55,8 @@ const DynamicChart = () => {
             lists.push(parseInt(totalllinsM));
             lists.push(parseInt(totalllins));
             console.log(lists)
+            console.log(result.data.metaData.items.LAST_3_MONTHS.name)
+            console.log(result.data.metaData.items[1])
             
             // lists.push(parseInt(totalllinsF));
             // lists.push(parseInt(totalllinsM));

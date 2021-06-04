@@ -74,6 +74,14 @@ export default class ArraysManipulation extends Component {
         const sortages = ages.sort((a, b)=> b-a);
         console.log(sortages);
 
+        // resuce function 
+        const ageSum =  ages.reduce((total, age) => total + age);
+        console.log(ageSum);
+
+        // combining functions 
+        const combines =  ages.map(age => age * 2) .filter(age => age >= 40) .sort((a,b)=> a-b) .reduce((total, age)=> total+age);
+        console.log(combines)
+
     }
     render() {
         return (

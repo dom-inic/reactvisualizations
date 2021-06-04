@@ -57,6 +57,15 @@ export default class ArraysManipulation extends Component {
         const techCompanies = companies.filter (tech => tech.category === 'technology');
         console.log(techCompanies)
 
+        // creating a new arrays of items using maps function
+
+        const allCompanies = companies.map(company => company.name);
+        console.log(allCompanies);
+        const companyName = companies.map(function(company){
+            return company.name;
+        }); 
+        console.log(companyName);
+
     }
     render() {
         return (

@@ -4,18 +4,31 @@ const companies = [
     {name: "company one", category: "finance", start: 1981, end: 2001, stakeholders: ['gary', "rafeh", 'dennis ivy']},
     {name: "company two", category: "technology", start:2000, end:2010 },
     {name: "company three", category: "energy", start:2000, end:2010 },
-    {name: "company four", category: "Biotech", start:2000, end:2010 },
+    {name: "company four", category: "technology", start:2000, end:2010 },
     {name: "company five", category: "Retail", start:2005, end:2016 },
-    {name: "company six", category: "Auto", start:2010, end:2015 },
-    {name: "company seven", category: "Space", start:2003, end:2020 },
+    {name: "company six", category: "technology", start:2010, end:2015 },
+    {name: "company seven", category: "technology", start:2003, end:2020 },
     {name: "company eight", category: "Farming", start:2000, end:2010, 
     stakeholders: ['Dominic', 'John Doe', "Bill gates"]
 },
 ]
 
-const age = [
+const ages = [
     33, 12, 80, 50, 15, 20, 25, 36, 87, 65, 45, 40, 67, 32
 ]
+
+// arrow functions 
+
+const arithmetic = (num1, num2) => {
+    console.log(num1 + num2);
+
+    const submit= name =>{
+        console.log(name)
+
+    }
+}
+
+arithmetic(45, 10);
 
 export default class ArraysManipulation extends Component {
 
@@ -27,6 +40,22 @@ export default class ArraysManipulation extends Component {
         companies.forEach(function(company){
             console.log(company.stakeholders)
         })
+        // filtering 
+        const canDrink = ages.filter(function(age) {
+            if (age >= 21){
+                return true;
+            }
+        }); 
+        console.log(canDrink)
+        arithmetic(34, 80);
+        // arrow function one liner
+
+        const canDrink2 = ages.filter(age => age >= 21);
+        console.log(canDrink2)
+
+        // filter companies by category
+        const techCompanies = companies.filter (tech => tech.category === 'technology');
+        console.log(techCompanies)
 
     }
     render() {

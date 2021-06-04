@@ -14,8 +14,8 @@ function App() {
     <div>
       <h1>Kisumu county </h1>
       <ArraysManipulation/>,
-      {/* <DynamicChart/>, 
-      <LineGraph/> */}
+      <DynamicChart/>, 
+      {/* <LineGraph/>  */}
 
     </div>
   );
